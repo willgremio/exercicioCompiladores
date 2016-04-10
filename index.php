@@ -41,7 +41,7 @@ if (isset($_POST['entrada']) && !empty($_POST['entrada'])) { // se preencheu o c
             <form action="" method="post">
                 <div>
                     <label>Entrada:</label><input value="<?= $valorDeEntrada ?>"  name="entrada" type="text" /><br/><br/>
-                    <input class="btn btn-default" type="submit" value="Calcular" />
+                    <input type="submit" value="Calcular" />
                 </div>
             </form><br/><br/>
 
