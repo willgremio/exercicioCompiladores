@@ -15,10 +15,9 @@ if (isset($_FILES['entrada']) && !empty($_FILES['entrada'])) { // se upou um arq
     $linhasDoArquivo = file($arquivoUpado); // coloca as linhas do txt em um array
     $arquivoFormatado = '';
     foreach ($linhasDoArquivo as $linha) {
-        $expressaoRegular = '/  /'; // procurar na linha por 2 espaços
+        $expressaoRegular = '/\s{2,}/'; // procurar por uma sequencia de espaços
         $trocarPor = ' '; // troca por 1 espaço
-        $arquivoFormatado .= preg_replace($expressaoRegular, $trocarPor, $linha); // procura por 2 espaços na linha e troca por 1 se achar
-        $arquivoFormatado .= "\n"; // nova linha
+        $arquivoFormatado .= preg_replace($expressaoRegular, $trocarPor, $linha); // faz a troca
     }
 
     file_put_contents($arquivoUpado, $arquivoFormatado); // coloca no arquivo o texto formatado
